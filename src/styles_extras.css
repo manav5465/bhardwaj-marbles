@@ -1,0 +1,50 @@
+/* Supplementary styles for carousel, modal and CNC section */
+:root{--g:#d4af37;--b:#0a0a0a;--t:#eaeaea}
+.logoCarousel{--logo-gap:26px;--logo-speed:18s;--logo-distance:0px;position:relative;overflow:hidden;mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)}
+.logoCarousel .track{display:flex;align-items:center;gap:var(--logo-gap);width:max-content;flex-wrap:nowrap;will-change:transform;animation:scroll var(--logo-speed) linear infinite}
+.logoCarousel.paused .track{animation-play-state:paused}
+.logoCarousel .logo{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:220px;height:150px;padding:10px;border-radius:16px;background:rgba(255,255,255,.03);box-shadow:0 18px 40px rgba(0,0,0,.18);border:1px solid rgba(212,175,55,.12);overflow:hidden;transition:transform .5s ease, box-shadow .5s ease}
+.logoCarousel .logo:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 22px 48px rgba(0,0,0,.24)}
+.logoCarousel .logo img{display:block;width:100%;height:100%;object-fit:cover;border-radius:12px;opacity:1;filter:none;mix-blend-mode:normal}
+
+@keyframes scroll{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(calc(-1 * var(--logo-distance)),0,0)}}
+
+@media (max-width:900px){.logoCarousel{--logo-gap:20px}.logoCarousel .logo{width:180px;height:120px}.logoCarousel .track{animation-duration:22s}}
+@media (max-width:560px){.logoCarousel{--logo-gap:16px}.logoCarousel .logo{width:150px;height:100px}.logoCarousel .track{animation-duration:26s}}
+
+.modalOverlay{position:fixed;inset:0;display:grid;place-items:center;padding:24px;background:rgba(0,0,0,.74);backdrop-filter:blur(8px);z-index:1000;overflow:hidden;overscroll-behavior:contain}
+.modalPanel{position:relative;width:min(90vw,1400px);max-width:1400px;max-height:90vh;background:#0d0d0d;color:var(--t);border:1px solid rgba(212,175,55,.35);border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.7);overflow:hidden;display:grid;grid-template-columns:minmax(0,42%) minmax(0,58%);align-items:stretch;animation:modalIn .25s ease}
+.modalImage{position:sticky;top:0;width:100%;height:100%;min-height:100%;overflow:hidden;background:#131313}
+.modalImage img{display:block;width:100%;height:100%;min-height:240px;object-fit:cover;object-position:center top}
+.modalContent{min-width:0;max-height:90vh;overflow-y:auto;overscroll-behavior:contain;padding:0 28px 28px;display:flex;flex-direction:column}
+.modalHeader{position:sticky;top:0;z-index:2;padding:30px 0 12px;background:linear-gradient(180deg,#111 0%,#111 80%,rgba(17,17,17,0) 100%)}
+.modalHeader h2{margin:0;font-size:clamp(2rem,3vw,3.2rem);line-height:1.08;max-width:18ch}
+.modalBody{display:flex;flex-direction:column;gap:14px}
+.modalBody p,.modalBody li{margin:0;max-width:62ch;color:#ddd;line-height:1.75;word-break:normal;overflow-wrap:normal}
+.modalBody strong{color:#fff}
+.modalBody ul{margin:0;padding-left:1.1rem;display:grid;gap:8px}
+.modalClose{position:absolute;right:18px;top:18px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(212,175,55,.4);background:#171717;color:#fff;font-size:26px;line-height:1;cursor:pointer;display:grid;place-items:center;z-index:10}
+.modalClose:hover{border-color:rgba(212,175,55,.7)}
+.modalContent::-webkit-scrollbar{width:10px}.modalContent::-webkit-scrollbar-track{background:rgba(255,255,255,.04)}.modalContent::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#d4af37,#8b6b17);border-radius:999px;border:2px solid rgba(17,17,17,.9)}
+@keyframes modalIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media (max-width:900px){.modalOverlay{padding:16px}.modalPanel{width:min(92vw,1100px);grid-template-columns:1fr;max-height:88vh}.modalImage{position:relative;min-height:280px;height:280px}.modalContent{max-height:100%;padding:0 18px 22px}.modalHeader{padding-top:22px}}
+@media (max-width:560px){.modalPanel{width:min(94vw,900px);border-radius:14px}.modalImage{min-height:220px;height:220px}.modalClose{right:12px;top:12px;width:34px;height:34px}.modalHeader h2{font-size:2rem}.modalBody p,.modalBody li{font-size:14px;line-height:1.7}}
+
+.cnc .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.cnc .sub{opacity:.85;margin-top:6px}
+
+@media(max-width:800px){.logoCarousel .track{animation-duration:26s}.cnc .features{grid-template-columns:1fr}}
+
+/* Contact map styles */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.map{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,0.25);height:520px}
+.map iframe{width:100%;height:100%;border:0;display:block;transform:scale(1);transition:transform .3s ease}
+.map:hover iframe{transform:scale(1.02)}
+.map .mapDirections{position:absolute;right:18px;bottom:18px;background:var(--g);color:#111;padding:10px 14px;border-radius:8px;display:inline-flex;gap:8px;align-items:center;text-decoration:none;font-weight:600;border:1px solid rgba(0,0,0,0.08)}
+.map .mapDirections:hover{transform:translateY(-2px)}
+.mapSkeleton{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,#0a0a0a,#0c0c0c)}
+.mapSkeleton .pulse{width:80%;height:60%;border-radius:12px;background:linear-gradient(90deg,rgba(212,175,55,0.06) 0%, rgba(212,175,55,0.12) 50%, rgba(212,175,55,0.06) 100%);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{opacity:0.6;transform:translateX(-6%)}50%{opacity:1;transform:translateX(6%)}100%{opacity:0.6;transform:translateX(-6%)}}
+
+@media(max-width:900px){.contact{grid-template-columns:1fr;}.map{height:360px}}
+

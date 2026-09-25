@@ -1,0 +1,28 @@
+/* Styles for navbar, drawer, side-panel and CNC parallax */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .28s}
+.nav .navin{display:flex;align-items:center;justify-content:space-between}
+.nav.scrolled{background:linear-gradient(180deg,rgba(10,10,10,.85),rgba(10,10,10,.72));backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,175,55,.08)}
+.nav nav a{padding:22px;color:#ddd}
+.nav nav a:hover, .nav nav a.active{color:var(--g)}
+.menu{background:none;border:0;color:#fff}
+
+.nav nav.drawer{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(10,10,10,.96);backdrop-filter:blur(6px)}
+.nav nav.drawer a{font-size:28px;padding:14px}
+
+.cnc{background-image:url('/src/assets/cnc-bg.png');background-attachment:fixed;background-size:cover;background-position:center;color:var(--t);position:relative}
+.cnc .container{padding:80px 0}
+.cnc:before{content:'';position:absolute;inset:0;background:transparent}
+
+/* Navbar visibility behavior */
+.nav{--nav-h:78px}
+.nav.visible{transform:translateY(0);transition:transform .36s cubic-bezier(.2,.9,.2,1)}
+.nav.hidden{transform:translateY(-100%);transition:transform .36s cubic-bezier(.2,.9,.2,1)}
+
+/* Reserve space for fixed navbar to avoid layout shift */
+body{--nav-h:78px;padding-top:var(--nav-h)}
+.nav{height:var(--nav-h)}
+
+/* Ensure hero starts immediately under navbar */
+.homehero{margin-top:0;padding-top:0}
+
+@media(max-width:800px){.nav nav.drawer{padding-top:60px}}
