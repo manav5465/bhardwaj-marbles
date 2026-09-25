@@ -1,8 +1,7 @@
-import { defineConfig } from 'vite';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  cacheDir: join(tmpdir(), 'bhardwaj-marbles-vite-cache'),
-  base: '/bhardwaj-marbles/',
-});
+  plugins: [react()],
+  base: '/bhardwaj-marbles/'
+})
