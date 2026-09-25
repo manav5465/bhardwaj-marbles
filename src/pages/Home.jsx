@@ -7,6 +7,12 @@ import {Material,Service,Project} from '../components/Cards';
 import Modal from '../components/Modal';
 import CNC from '../components/CNC';
 import LogoCarousel from '../components/LogoCarousel';
+import logo1 from '../assets/logos/a1.png';
+import logo2 from '../assets/logos/a2.png';
+import logo3 from '../assets/logos/a3.png';
+import logo4 from '../assets/logos/a4.png';
+import logo5 from '../assets/logos/a5.png';
+import logo6 from '../assets/logos/a6.png';
 
 const stats=[
   ['500+','Projects completed',FaAward],
@@ -26,12 +32,12 @@ export default function Home(){
     function closeModal(){ setModal({open:false,type:null,data:null}); }
 
   const logos=[
-    {src:'/src/assets/logos/a1.png',alt:'Architect'},
-    {src:'/src/assets/logos/a2.png',alt:'Designer'},
-    {src:'/src/assets/logos/a3.png',alt:'Builder'},
-    {src:'/src/assets/logos/a4.png',alt:'Developer'},
-    {src:'/src/assets/logos/a5.png',alt:'Corporate'},
-    {src:'/src/assets/logos/a6.png',alt:'Hospitality'}
+    {src:logo1,alt:'Architect'},
+    {src:logo2,alt:'Designer'},
+    {src:logo3,alt:'Builder'},
+    {src:logo4,alt:'Developer'},
+    {src:logo5,alt:'Corporate'},
+    {src:logo6,alt:'Hospitality'}
   ];
 
   return (

@@ -9,7 +9,7 @@
 .nav nav.drawer{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(10,10,10,.96);backdrop-filter:blur(6px)}
 .nav nav.drawer a{font-size:28px;padding:14px}
 
-.cnc{background-image:url('/src/assets/cnc-bg.png');background-attachment:fixed;background-size:cover;background-position:center;color:var(--t);position:relative}
+.cnc{background-image:url('./assets/cnc-bg.png');background-attachment:fixed;background-size:cover;background-position:center;color:var(--t);position:relative}
 .cnc .container{padding:80px 0}
 .cnc:before{content:'';position:absolute;inset:0;background:transparent}
 
