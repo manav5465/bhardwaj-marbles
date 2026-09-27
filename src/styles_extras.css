@@ -28,7 +28,7 @@
 .modalContent::-webkit-scrollbar{width:10px}.modalContent::-webkit-scrollbar-track{background:rgba(255,255,255,.04)}.modalContent::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#d4af37,#8b6b17);border-radius:999px;border:2px solid rgba(17,17,17,.9)}
 @keyframes modalIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media (max-width:900px){.modalOverlay{padding:16px}.modalPanel{width:min(92vw,1100px);grid-template-columns:1fr;max-height:88vh}.modalImage{position:relative;min-height:280px;height:280px}.modalContent{max-height:100%;padding:0 18px 22px}.modalHeader{padding-top:22px}}
-@media (max-width:560px){.modalPanel{width:min(94vw,900px);border-radius:14px}.modalImage{min-height:220px;height:220px}.modalClose{right:12px;top:12px;width:34px;height:34px}.modalHeader h2{font-size:2rem}.modalBody p,.modalBody li{font-size:14px;line-height:1.7}}
+@media (max-width:560px){.modalPanel{width:min(94vw,900px);border-radius:14px}.modalImage{min-height:220px;height:220px}.modalClose{right:12px;top:12px;width:34px;height:34px}.modalHeader h2{font-size:2rem}.modalBody p,.modalBody li{font-size:14px;line-height:1.7}.logoCarousel .logo{width:120px;height:90px}.logoCarousel .track{animation-duration:20s}}
 
 .cnc .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
 .cnc .sub{opacity:.85;margin-top:6px}
