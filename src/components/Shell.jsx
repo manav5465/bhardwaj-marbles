@@ -53,6 +53,6 @@ export function Navbar(){
 	)
 }
 
-export function Footer(){return <footer><div className="container foot"><div><div className="brand"><span>BM</span><b>Bhardwaj<br/>Marbles</b></div><p>Stone surfaces and craftsmanship for spaces with a lasting point of view.</p></div><div><b>Explore</b><Link to="/materials">Materials</Link><Link to="/services">Services</Link><Link to="/projects">Projects</Link></div><div><b>Contact</b><p>Delhi NCR, India</p><a href="tel:+919876543210">{phone}</a><a href="https://wa.me/919876543210">WhatsApp</a></div></div><small>© {new Date().getFullYear()} Bhardwaj Marbles. Crafted with care.</small></footer>}
+export function Footer(){return <footer><div className="container foot"><div><div className="brand"><span>BM</span><b>Bhardwaj<br/>Marbles</b></div><p>Stone surfaces and craftsmanship for spaces with a lasting point of view.</p></div><div><b>Explore</b><Link to="/materials">Materials</Link><Link to="/services">Services</Link><Link to="/projects">Projects</Link></div><div><b>Contact</b><p>Delhi NCR, India</p><a href="tel:+919811823950">{phone}</a><a href="https://wa.me/919811823950">WhatsApp</a></div></div><small>© {new Date().getFullYear()} Bhardwaj Marbles. Crafted with care.</small></footer>}
 
-export function MobileBar(){return <div className="mobilebar"><a href="tel:+919876543210"><FaPhoneAlt/>Call</a><a href="https://wa.me/919876543210"><FaWhatsapp/>WhatsApp</a></div>}
+export function MobileBar(){return <div className="mobilebar"><a href="tel:+919811823950"><FaPhoneAlt/>Call</a><a href="https://wa.me/919811823950"><FaWhatsapp/>WhatsApp</a></div>}
