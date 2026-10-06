@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {FaAward,FaGem,FaTools,FaUsers} from 'react-icons/fa';
-import {Btn,Title,CTA} from '../components/UI';
-import {materials,services,projects} from '../data/content';
-import {Material,Service,Project} from '../components/Cards';
+import {Title} from '../components/UI'; // Removed the two homepage hero CTA buttons; the navbar "Call Now" button remains unchanged.
+import {services,projects} from '../data/content';
+import {Service,Project} from '../components/Cards';
 import Modal from '../components/Modal';
-import CNC from '../components/CNC';
 import LogoCarousel from '../components/LogoCarousel';
 import logo1 from '../assets/logos/a1.png';
 import logo2 from '../assets/logos/a2.png';
@@ -24,10 +23,9 @@ const stats=[
 export default function Home(){
   // Note: modal state consolidated below
 
-    // single modal state: { open: bool, type: 'material'|'service'|null, data: object|null }
+    // single modal state: { open: bool, type: 'service'|null, data: object|null }
     const [modal,setModal]=useState({open:false,type:null,data:null});
   
-    function openMaterial(m){ setModal({open:true,type:'material',data:m}); }
     function openService(s){ setModal({open:true,type:'service',data:s}); }
     function closeModal(){ setModal({open:false,type:null,data:null}); }
 
@@ -47,15 +45,13 @@ export default function Home(){
           <i>Bhardwaj Marbles · Est. 1987</i>
           <h1>Crafting timeless <em>luxury</em> in stone.</h1>
           <p>Premium marble, granite, onyx, Corian, CNC art and bespoke stone craftsmanship for spaces made to be remembered.</p>
-          <Btn to="/materials">Explore collection</Btn>
-          <Btn to="/contact" plain>Call now</Btn>
+          {/* Removed: homepage hero CTA buttons "Explore Collection" and "Call Now". The header navbar call button remains unchanged. */}
         </div>
       </section>
-      {/* CNC Work — new module immediately after Hero */}
-      <CNC onExplore={()=>openService(services.find(s=>s.id==='cnc'))} />
 
-      <section className="stats container">
-        {stats.map(([n,t,I])=> <div key={t}><I/><strong>{n}</strong><small>{t}</small></div>)}
+      {/* Running Logo Carousel - moved directly below the Hero section */}
+      <section className="section container logosec">
+        <LogoCarousel logos={logos} />
       </section>
 
       {/* What We Make */}
@@ -68,20 +64,6 @@ export default function Home(){
         </div>
       </section>
 
-      {/* Materials, Curated */}
-      <section className="section container">
-        <Title tag="Materials, curated" title="Nature’s rarest surfaces, selected for your story." copy="A considered material library spanning the elemental to the exceptional."/>
-        <div className="materials">
-          {materials.map((m,i)=> <Material key={m.id} x={m} i={i} onDiscover={openMaterial} />)}
-        </div>
-        <Link className="more" to="/materials">View all materials →</Link>
-      </section>
-
-      {/* Running Logo Carousel */}
-      <section className="section container logosec">
-        <LogoCarousel logos={logos} />
-      </section>
-
       {/* Selected Work */}
       <section className="section container">
         <Title tag="Selected work" title="Spaces with a point of view."/>
@@ -91,32 +73,12 @@ export default function Home(){
         <Link className="more" to="/projects">Enter the project archive →</Link>
       </section>
 
-      {/* The Bhardwaj Standard + CTA (kept minimal here; existing content remains in project) */}
-      <section className="section why">
-        <div className="container split">
-          <div>
-            <i>The Bhardwaj standard</i>
-            <h2>Craft does not happen by accident.</h2>
-            <p>Our approach blends technical precision with timeless aesthetics for every project.</p>
-          </div>
-          <div>
-            <CTA to="/contact">Start your project</CTA>
-          </div>
-        </div>
+      <section className="stats container stats-post-project">
+        {stats.map(([n,t,I])=> <div key={t}><I/><strong>{n}</strong><small>{t}</small></div>)}
       </section>
 
       {/* Single modal is controlled via `modal` state */}
       <Modal open={modal.open} onClose={closeModal} title={modal.data?.name} largeImg={modal.data?.img}>
-        {modal.type === 'material' && modal.data && (
-          <>
-            <p><strong>Description</strong></p>
-            <p>{modal.data.description}</p>
-            <p><strong>Best Used For</strong></p>
-            <ul>{modal.data.applications?.map((a,i)=> <li key={i}>{a}</li>)}</ul>
-            <p><strong>Advantages</strong></p>
-            <ul>{modal.data.advantages?.map((a,i)=> <li key={i}>{a}</li>)}</ul>
-          </>
-        )}
         {modal.type === 'service' && modal.data && (
           <>
             <p><strong>Overview</strong></p>
