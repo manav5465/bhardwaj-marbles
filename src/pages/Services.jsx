@@ -47,7 +47,7 @@ export default function Services() {
             <p>{modal.data.process}</p>
             <p><strong>Applications</strong></p>
             <ul>{modal.data.applications?.map((a, i) => <li key={i}>{a}</li>)}</ul>
-            <p><strong>Why Choose Bhardwaj Marbles</strong></p>
+            <p><strong>Why Choose Bhardwaj Marble Trading Co.</strong></p>
             <ul>{modal.data.benefits?.map((b, i) => <li key={i}>{b}</li>)}</ul>
           </>
         )}

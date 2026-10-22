@@ -42,7 +42,7 @@ export default function Home(){
     <>
       <section className="homehero">
         <div className="container heroCopy">
-          <i>Bhardwaj Marbles · Est. 1987</i>
+          <i>Bhardwaj Marble Trading Co. · Est. 1987</i>
           <h1>Crafting timeless <em>luxury</em> in stone.</h1>
           <p>Premium marble, granite, onyx, Corian, CNC art and bespoke stone craftsmanship for spaces made to be remembered.</p>
           {/* Removed: homepage hero CTA buttons "Explore Collection" and "Call Now". The header navbar call button remains unchanged. */}
@@ -87,7 +87,7 @@ export default function Home(){
             <p>{modal.data.process}</p>
             <p><strong>Applications</strong></p>
             <ul>{modal.data.applications?.map((a,i)=> <li key={i}>{a}</li>)}</ul>
-            <p><strong>Why Choose Bhardwaj Marbles</strong></p>
+            <p><strong>Why Choose Bhardwaj Marble Trading Co.</strong></p>
             <ul>{modal.data.benefits?.map((b,i)=> <li key={i}>{b}</li>)}</ul>
           </>
         )}

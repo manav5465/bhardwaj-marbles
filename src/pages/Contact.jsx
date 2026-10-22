@@ -21,7 +21,7 @@ export default function Contact(){
 			<div className="map">
 				{!loaded && <div className="mapSkeleton" aria-hidden="true"><div className="pulse"/></div>}
 				<iframe
-					title="Bhardwaj Marbles location"
+					title="Bhardwaj Marble Trading Co. location"
 					src={embedSrc}
 					loading="lazy"
 					onLoad={()=>setLoaded(true)}

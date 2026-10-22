@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 100" role="img" aria-labelledby="title">
+  <title id="title">Bhardwaj Marble Trading Co.</title>
+  <defs>
+    <clipPath id="monogram">
+      <text x="8" y="77" font-family="Georgia,serif" font-size="82" font-weight="700" letter-spacing="-12">BM</text>
+    </clipPath>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0bf"/>
+      <stop offset=".42" stop-color="#d6a64c"/>
+      <stop offset="1" stop-color="#8d5d19"/>
+    </linearGradient>
+    <pattern id="marble" width="72" height="72" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+      <rect width="72" height="72" fill="#171614"/>
+      <path d="M-12 19 15 11l12 4 23-13M20 80l16-26 18-8 27-32" fill="none" stroke="#92744e" stroke-width="2" opacity=".62"/>
+      <path d="m-8 23 25-8 12 3 24-14M18 83l18-28 19-8 28-34" fill="none" stroke="#eee0c5" stroke-width=".8" opacity=".6"/>
+    </pattern>
+  </defs>
+  <g clip-path="url(#monogram)">
+    <rect x="0" y="0" width="120" height="100" fill="url(#marble)"/>
+  </g>
+  <text x="8" y="77" font-family="Georgia,serif" font-size="82" font-weight="700" letter-spacing="-12" fill="none" stroke="url(#gold)" stroke-width="1.8">BM</text>
+  <path d="M120 12v76" stroke="url(#gold)" stroke-width="1" opacity=".75"/>
+  <text x="139" y="43" fill="#f4ead9" font-family="Georgia,serif" font-size="25" letter-spacing="1.6">BHARDWAJ MARBLE</text>
+  <path d="M140 63h42m198 0h42" stroke="url(#gold)" stroke-width="1.4"/>
+  <text x="195" y="69" fill="url(#gold)" font-family="Georgia,serif" font-size="13" letter-spacing="6">TRADING CO.</text>
+</svg>

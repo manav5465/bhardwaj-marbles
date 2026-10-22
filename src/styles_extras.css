@@ -1,5 +1,7 @@
 /* Supplementary styles for carousel, modal and CNC section */
 :root{--g:#d4af37;--b:#0a0a0a;--t:#eaeaea}
+.brand-logo{display:block;width:clamp(205px,22vw,270px);height:auto}
+footer .brand-logo{width:min(270px,100%)}
 .logoCarousel{--logo-gap:26px;--logo-speed:18s;--logo-distance:0px;position:relative;overflow:hidden;mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)}
 .logoCarousel .track{display:flex;align-items:center;gap:var(--logo-gap);width:max-content;flex-wrap:nowrap;will-change:transform;animation:scroll var(--logo-speed) linear infinite}
 .logoCarousel.paused .track{animation-play-state:paused}
@@ -11,6 +13,7 @@
 
 @media (max-width:900px){.logoCarousel{--logo-gap:20px}.logoCarousel .logo{width:180px;height:120px}.logoCarousel .track{animation-duration:22s}}
 @media (max-width:560px){.logoCarousel{--logo-gap:16px}.logoCarousel .logo{width:150px;height:100px}.logoCarousel .track{animation-duration:26s}}
+@media(max-width:800px){.brand-logo{width:clamp(190px,48vw,235px)}}
 
 .modalOverlay{position:fixed;inset:0;display:grid;place-items:center;padding:24px;background:rgba(0,0,0,.74);backdrop-filter:blur(8px);z-index:1000;overflow:hidden;overscroll-behavior:contain}
 .modalPanel{position:relative;width:min(90vw,1400px);max-width:1400px;max-height:90vh;background:#0d0d0d;color:var(--t);border:1px solid rgba(212,175,55,.35);border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.7);overflow:hidden;display:grid;grid-template-columns:minmax(0,42%) minmax(0,58%);align-items:stretch;animation:modalIn .25s ease}
